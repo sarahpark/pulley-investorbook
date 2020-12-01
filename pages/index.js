@@ -86,12 +86,17 @@ function Company({ name, investors }) {
 
 function Pagination() {
   return (
-    <div>
-      Rows per page: 6 <img src='/drop-down.png' alt='drop down'/>
-      <div>
+    <div className={styles.pagination}>
+      Rows per page:
+      <p className={styles.dropdown}>6
+        <img className={styles.dropdownIcon} src='/drop-down.png' alt='drop down'/>
+      </p>
+      <div className={styles.pageInfo}>
         1-6 of 1,000
-        <img src='/left-arrow.png' alt='left arrow'/>
-        <img src='/right-arrow.png' alt='right arrow'/>
+        <div className={styles.nextPrev}>
+          <img src='/left-arrow.png' alt='left arrow'/>
+          <img src='/right-arrow.png' alt='right arrow'/>
+        </div>
       </div>
     </div>
   )
@@ -103,6 +108,7 @@ export default function Home() {
       <Head>
         <title>Investorbook | By Sarah Park</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="https://use.typekit.net/pcn6hma.css" />
       </Head>
 
       <main className={styles.main}>

@@ -1,3 +1,6 @@
+/* Variables */
+$primaryColor: #434FBC;
+
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -12,15 +15,16 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: center;
-  align-items: center;
   padding: 35px 45px;
-  width: 70vw;
+  width: 90vw;
+  max-width: 929px;
   background: white;
-  box-shadow: 0px 2px 6px 4px rgba(136, 141, 154, 0.1);
-  border-radius: 4px;
   margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin-bottom: 10vh;
+  border-radius: 4px;
+  box-shadow: 0px 2px 6px 4px rgba(136, 141, 154, 0.1);
+  max-height: 90vh;
+  overflow-y: scroll;
 }
 
 .logo {
@@ -35,7 +39,6 @@
   margin: 0 auto;
 
   .react-tabs {
-    -webkit-tap-highlight-color: transparent;
 
     &__tab-list {
       margin: 0 0 10px;
@@ -46,7 +49,7 @@
     }
 
     &__tab {
-      color: gray;
+      color: #A0A0A0;
       font-size: 15px;
       display: block;
       position: relative;
@@ -64,18 +67,12 @@
         border-bottom: 3px solid black;
       }
 
+      &:hover {
+        color: $primaryColor;
+      }
+
       &:focus {
         outline: none;
-
-        &:after {
-          content: "";
-          position: absolute;
-          height: 5px;
-          left: -4px;
-          right: -4px;
-          bottom: -5px;
-          background: #fff;
-        }
       }
     }
 
@@ -94,26 +91,23 @@
 
   h2 {
     font-size: 28px;
-    font-weight: 500;
+    font-weight: 400;
     display: inline-block;
     vertical-align: bottom;
     margin: 0 18px 0 0;
   }
 
   button {
-    color: #434FBC;
+    color: $primaryColor;
     border: 1.4px solid #616DD7;
-    box-sizing: border-box;
     border-radius: 4px;
     background: transparent;
-    outline: none;
     padding: 5px 10px;
-    cursor: pointer;
     transition: .2s all linear;
 
     &:hover {
       color: white;
-      background: #434FBC;
+      background: $primaryColor;
     }
   }
 
@@ -123,6 +117,7 @@
     right: 0;
     img {
       width: 21px;
+      height: 21px;
     }
   }
 }
@@ -163,7 +158,7 @@
     }
 
     &:hover {
-      a { color: #434FBC; }
+      a { color: $primaryColor; }
     }
   }
 
@@ -173,6 +168,38 @@
     display: inline-block;
     align-self: center;
     width: 70%;
+  }
+}
+
+.pagination {
+  font-size: 12px;
+  padding-top: 16px;
+  text-align: right;
+
+  .dropdown {
+    margin-left: 6px;
+    display: inline;
+
+    .dropdownIcon {
+      width: 10px;
+      margin-left: 4px;
+      vertical-align: middle;
+    } 
+  }
+
+  .pageInfo {
+    display: inline;
+    margin-left: 30px;
+
+    .nextPrev {
+      margin-left: 10px;
+      display: inline;
+      
+      img {
+        width: 12px;
+        vertical-align: middle;
+      }
+    }
   }
 }
 
