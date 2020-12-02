@@ -100,9 +100,7 @@
 }
 
 .row {
-  border-bottom: #EEEEEE 1px solid;
-  display: flex;
-  justify-content: space-between;
+  @extend %row-shared;
 
   .name {
     display: inline-block;
