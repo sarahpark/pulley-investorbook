@@ -92,6 +92,15 @@ function Company({ name, investors }) {
   )
 }
 
+function Search({ placeholder }) {
+  return (
+    <div className={styles.search}>
+      <img src='/search-icon.png' alt='search'/>
+      <input placeholder={placeholder} />
+    </div>
+  )
+}
+
 function Pagination() {
   return (
     <div className={styles.pagination}>
@@ -135,9 +144,7 @@ export default function Home() {
             <div className={styles.header}>
               <h2>Investors</h2>
               <button>Add Investor</button>
-              <div className={styles.search}>
-                <img src='/search-icon.png' alt='search'/>
-              </div>
+              <Search placeholder='Search investors' />
             </div>
 
             <div>
@@ -161,9 +168,7 @@ export default function Home() {
             <div className={styles.header}>
               <h2>Companies</h2>
               <button>Add Company</button>
-              <div className={styles.search}>
-                <img src='/search-icon.png' alt='search'/>
-              </div>
+              <Search placeholder='Search companies' />
             </div>
             <div>
               <div className={styles.tableHeaders}>
