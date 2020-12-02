@@ -1,0 +1,161 @@
+@import "_Shared.module.scss";
+
+.content {
+  display: flex;
+  align-items: top;
+  margin-top: 15px;
+}
+
+.back {
+  display: flex;
+  flex-direction: row;
+
+  .backIcon {
+    width: 23px;
+    padding-top: 15px;
+    margin-right: 15px;
+  }
+
+  .headshot {
+    width: 52px;
+    height: 52px;
+    margin-right: 24px;
+  }
+}
+
+.mainContent {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  margin-top: 6px;
+  margin-bottom: 24px;
+  justify-content: space-between;
+
+  & > div {
+    display: flex; 
+  }
+
+
+  .person {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1;
+      margin: 0 0 6px 0;
+    }
+
+    p {
+      font-size: 15px;
+      margin: 0;
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+
+    button {
+      @extend %button-shared;
+      text-transform: uppercase;
+      transition: .2s all linear;
+      border: 0;
+      margin-left: 20px;
+      font-size: 12px;
+      letter-spacing: 0.07em;
+
+      img {
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        margin-right: 7px;
+      }
+
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+}
+
+
+.tableTitle {
+
+  h3 {
+    font-size: 15px;
+    display: inline-block;
+    margin-right: 12px;
+  }
+
+  button {
+    @extend %button-shared;
+    color: $primaryColor;
+    border: 0;
+    font-size: 15px;
+
+    &:hover {
+      color: lighten($primaryColor, 15%);
+    }
+  }
+}
+
+.tableHeaders {
+  @extend %tableHeaders-shared;
+  display: flex;
+  justify-content: space-between;
+
+  .title1 {
+    width: 30%;
+  }
+
+  .title2 {
+    width: 49%;
+  }
+
+  .title3 {
+    width: 11%;
+  }
+}
+
+.row {
+  border-bottom: #EEEEEE 1px solid;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  .name {
+    display: inline-block;
+    align-self: center;
+    font-size: 14px;
+    width: 30%;
+
+    &:hover {
+      a { color: $primaryColor; }
+    }
+  }
+
+  .amount {
+    font-size: 12px;
+    color: #242424;
+    width: 49%;
+    align-self: center;
+  }
+
+  .actions {
+    width: 11%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    align-self: center;
+    cursor: pointer;
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

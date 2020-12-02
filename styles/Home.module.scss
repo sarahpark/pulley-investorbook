@@ -1,39 +1,4 @@
-/* Variables */
-$primaryColor: #434FBC;
-
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #F7F7F8;
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 35px 45px;
-  width: 90vw;
-  max-width: 929px;
-  background: white;
-  margin-top: 5vh;
-  margin-bottom: 10vh;
-  border-radius: 4px;
-  box-shadow: 0px 2px 6px 4px rgba(136, 141, 154, 0.1);
-  max-height: 90vh;
-  overflow-y: scroll;
-}
-
-.logo {
-  width: 100%;
-  margin-bottom: 24px;
-  img {
-    width: 190px;
-  }
-}
+@import "_Shared.module.scss";
 
 .tabsContainer :global {
   margin: 0 auto;
@@ -98,10 +63,10 @@ $primaryColor: #434FBC;
   }
 
   button {
+    @extend %button-shared;
     color: $primaryColor;
     border: 1.4px solid #616DD7;
     border-radius: 4px;
-    background: transparent;
     padding: 5px 10px;
     transition: .2s all linear;
 
@@ -123,25 +88,21 @@ $primaryColor: #434FBC;
 }
 
 .tableHeaders {
-  color: #797979;
-  border-bottom: #EEEEEE 1px solid;
-  text-transform: uppercase;
-  font-size: 12px;
+  @extend %tableHeaders-shared;
 
   .title1 {
     width: 28%;
-    display: inline-block;
   }
 
   .title2 {
     width: 70%;
-    display: inline-block;
   }
 }
 
 .row {
   border-bottom: #EEEEEE 1px solid;
   display: flex;
+  justify-content: space-between;
 
   .name {
     display: inline-block;
