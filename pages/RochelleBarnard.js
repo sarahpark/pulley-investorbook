@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '../styles/Details.module.scss'
+import AddInvestorModal from '../components/AddInvestorModal'
 
 const investments = [
   {
@@ -31,6 +33,13 @@ function Investment({ name, amount }) {
 }
 
 export default function Details() {
+
+  const [showModal, setShowModal] = useState(false);
+
+  function toggleModal() {
+    setShowModal(!showModal);
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -38,6 +47,8 @@ export default function Details() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://use.typekit.net/pcn6hma.css" />
       </Head>
+
+      { showModal ? <AddInvestorModal toggleModal={toggleModal} /> : '' }
 
       <main className={styles.main}>
 
@@ -73,7 +84,7 @@ export default function Details() {
             <div className={styles.table}>
               <div className={styles.tableTitle}>
                 <h3>Investments</h3>
-                <button>+ Add Investments</button>
+                <button onClick={toggleModal}>+ Add Investments</button>
               </div>
               <div className={styles.tableHeaders}>
                 <p className={styles.title1}>Name</p>
