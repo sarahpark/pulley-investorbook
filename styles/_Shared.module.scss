@@ -1,0 +1,58 @@
+/* Variables */
+$primaryColor: #434FBC;
+
+/* Inheritance */
+%tableHeaders-shared {
+  color: #797979;
+  border-bottom: #EEEEEE 1px solid;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  display: flex;
+  justify-content: space-between;
+
+  p[class^='title'] {
+    display: inline-block;
+  }
+}
+
+%button-shared {
+  background: transparent;
+  cursor: pointer;
+  transition: .2s all linear;
+}
+
+/* Components */
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #F7F7F8;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 35px 45px;
+  width: 90vw;
+  max-width: 929px;
+  background: white;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+  border-radius: 4px;
+  box-shadow: 0px 2px 6px 4px rgba(136, 141, 154, 0.1);
+  max-height: 90vh;
+  overflow-y: scroll;
+}
+
+.logo {
+  width: 100%;
+  margin-bottom: 24px;
+  img {
+    width: 190px;
+  }
+}

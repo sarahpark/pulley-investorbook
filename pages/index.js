@@ -5,32 +5,38 @@ import styles from '../styles/Home.module.scss'
 
 const investors = [
   {
-    name: 'Rochelle Barnard',
+    firstName: 'Rochelle',
+    lastName: 'Barnard',
     headshot: 'rochelle-pfp.jpg',
     investments: 'Abbott Laboratories, Advanced Micro Devices, Altice USA, American Express, AutoZone, Builders FirstSource, Caesars Entertainment, Corning, Dana, Discover Financial Services, Edison International, Expedia Group, Hertz, Global Holdings, Hilton Worldwide Holdings, Keurig Dr Pepper, Macy\'s, NGL Energy Partners, NetApp, News Corp., Qualcomm, Rockwell Collins, Stanley Black & Decker, WestRock'
   },
   {
-    name: 'Nick Barajas',
+    firstName: 'Nick',
+    lastName: 'Barajas',
     headshot: 'nick-pfp.jpg',
     investments: 'AT&T, American Express, Ameriprise Financial, Anixter International, Bristol-Myers Squibb, Builders FirstSource, CarMax, Cintas, DaVita, Global Partners, Hanesbrands, Hershey, Hormel Foods, Kroger, Liberty Media, Navistar International, ON, Semiconductor, Post Holdings'
   },
   {
-    name: 'Ananya Lovell',
+    firstName: 'Ananya',
+    lastName: 'Lovell',
     headshot: 'ananya-pfp.jpg',
     investments: 'A-Mark Precious Metals, Albertsons, American Express, Anadarko Petroleum, Aramark, Ascena Retail Group, CDW, Chesapeake Energy, Comcast, Dana, Entergy, Farmers Insurance Exchange, Harley-Davidson, Lennar, Mohawk Industries, NGL Energy Partners, Nvidia, R.R. Donnelley & Sons, Republic Services, Sherwin-Williams, Textron, Thermo Fisher, Scientific, TravelCenters of America, W.R. Berkley, Williams'
   },
   {
-    name: 'Dante Mansell',
+    firstName: 'Dante',
+    lastName: 'Mansell',
     headshot: 'dante-pfp.jpg',
     investments: 'Abbott Laboratories, Advanced Micro Devices, Altice USA, American Express, AutoZone, Builders FirstSource, Caesars Entertainment, Corning, Dana'
   },
   {
-    name: 'Kayden Tate',
+    firstName: 'Kayden',
+    lastName: 'Tate',
     headshot: 'kayden-pfp.jpg',
     investments: 'AT&T, American Express, Ameriprise Financial, Anixter International, Bristol-Myers Squibb, Builders FirstSource, CarMax, Cintas, DaVita, Global Partners, Hanesbrands, Hershey, Hormel Foods, Kroger, Liberty Media, Navistar International, ON, Semiconductor, Post Holdings, Rite Aid, Robert Half International, Southwest Airlines, Tenneco, Thermo Fisher, Scientific, WestRock, iHeartMedia'
   },
   {
-    name: 'Bruno Liu',
+    firstName: 'Bruno',
+    lastName: 'Liu',
     headshot: 'bruno-pfp.jpg',
     investments: 'A-Mark Precious Metals, Albertsons, American Express, Anadarko Petroleum, Aramark, Ascena Retail Group, CDW, Chesapeake Energy, Comcast, Dana, Entergy, Farmers Insurance Exchange, Harley-Davidson, Lennar, Mohawk Industries, NGL Energy Partners, Nvidia, R.R. Donnelley & Sons'
   },
@@ -63,12 +69,14 @@ const companies = [
   },
 ]
 
-function Investor({ name, headshot, investments }) {
+function Investor({ firstName, lastName, headshot, investments }) {
   return (
     <div className={styles.row}>
       <div className={styles.name}>
-        <img className={styles.headshot} src={`/headshots/${headshot}`} alt={name} />
-        <Link href={name}><a>{name}</a></Link>
+        <img className={styles.headshot} src={`/headshots/${headshot}`} alt={`${firstName} ${lastName}`} />
+        <Link href={`${firstName}${lastName}`}>
+          <a>{firstName} {lastName}</a>
+        </Link>
       </div>
       <p className={styles.details}>{investments}</p>  
     </div>
@@ -139,7 +147,8 @@ export default function Home() {
               </div>
               {investors.map((investor) => (
                 <Investor
-                  name={investor.name}
+                  firstName={investor.firstName}
+                  lastName={investor.lastName}
                   headshot={investor.headshot}
                   investments={investor.investments}
                 />
