@@ -57,12 +57,20 @@
       background: $primaryColor;
       margin-left: 10px;
       border: none;
+
+      &:hover {
+        background-color: lighten($primaryColor, 15%);
+      }
     }
 
     .secondaryBtn {
       @extend %button-shared; 
       color: $primaryColor;
       border: none;
+
+      &:hover {
+        color: lighten($primaryColor, 15%);
+      }
     }
   }
 }
